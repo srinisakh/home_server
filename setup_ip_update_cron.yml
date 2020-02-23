@@ -1,0 +1,24 @@
+- hosts: plexservers
+  become: yes
+  tasks:
+    - name: please provide domain and secret to update the ip renewer script
+      fail:
+        msg: "Pass domain and secret as variables to this script for renewing ip periodically"
+      when: domain is undefined and secret is undefined
+
+    - name: create dyn dns updater script
+      copy:
+        content: |
+           #! /bin/bash
+           public_ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+           curl "https://dynamicdns.park-your-domain.com/update?host=@&domain={{domain}}&password={{secret}}&ip=${public_ip}"
+        dest: /usr/local/bin/updateip.sh
+
+    - name: add ip update script to cron
+      cron:
+        name: ip update
+        minute: "*/5"
+        user: root
+        job: "/usr/local/bin/updateip.sh"
+
+

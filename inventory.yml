@@ -1,0 +1,10 @@
+all:
+  hosts:
+    srinisakh.me:
+  children:
+    plexservers:
+      hosts:
+        srinisakh.me:
+    movies:
+      hosts:
+        srinisakh.me:

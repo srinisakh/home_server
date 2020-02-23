@@ -1,0 +1,4 @@
+
+- import_playbook: setup_plex_software.yml
+- import_playbook: setup_movies_user.yml
+- import_playbook: setup_ip_update_cron.yml

@@ -1,0 +1,4 @@
+- hosts: plexservers
+  roles:
+    - { role: wilmardo.plex }
+
