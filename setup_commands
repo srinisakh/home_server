@@ -1,0 +1,222 @@
+    1  clear
+    2  git
+    3  git clone git@github.com:srsakhamuri/home_server
+    4  git clone git@github.com:srsakhamuri/home-server
+    5  cat /proc/cpuinfo 
+    6  sudo apt-get update
+    7  sudo apt-get upgrade
+    8  docker
+    9  docker --version
+   10  sudo shutdown now
+   11  clear
+   12  ls 0ls
+   13  git clone https://github.com/srsakhamuri/home_server.git
+   14  cd home_server/
+   15  ls
+   16  cd docker/
+   17  ls
+   18  vi docker-compose.yml 
+   19  cat docker-compose@
+   20  cat docker-compose@.service 
+   21  sudo su
+   22  vi docker-compose.yml 
+   23  cd ..
+   24  mkdir -p configs/{plex,nzbget,sonarr,radarr}
+   25  cd configs/
+   26  ls
+   27  vi ..
+   28  cd
+   29  mergerfs --help
+   30  mkdir /mnt/data
+   31  sudo mkdir /mnt/data
+   32  ls -ls /mnt
+   33  cd /mnt/data
+   34  ls -ls
+   35  cd ..
+   36  chown ssakhamuri:ssakhamuri data
+   37  sudo chown ssakhamuri:ssakhamuri data
+   38  sudo chmod 777 data/
+   39  ls -ls
+   40  #mergerfs -o allow_other,use_ino /mnt/d? /mnt/data
+   41  mergerfs -o allow_other,use_ino /mnt/d? /mnt/data
+   42  cd /mnt
+   43  cd d3
+   44  ls
+   45  ls -ls
+   46  mergerfs -o allow_other,use_ino /mnt/d1:/mnt/d2:/mnt/d3:/mnt/d4:/mnt/d5 /mnt/data
+   47  cd ..
+   48  cd data
+   49  ls
+   50  mergerfs -o allow_other,use_ino /mnt/d1:/mnt/d2:/mnt/d3:/mnt/d4:/mnt/d5 /mnt/data
+   51  vi /etc/fuse.conf 
+   52  sudo mergerfs -o allow_other,use_ino /mnt/d1:/mnt/d2:/mnt/d3:/mnt/d4:/mnt/d5 /mnt/data
+   53  mount
+   54  sudo vi /etc/fstab 
+   55  umount /mnt/data
+   56  sudo umount /mnt/data
+   57  mount -a
+   58  sudo mount -a
+   59  sudo vi /etc/fstab 
+   60  sudo mount -a
+   61  cd /mnt/data
+   62  ls
+   63  cd 
+   64  service docker-compose@home-server start
+   65  sudo service docker-compose@home-server start
+   66  sudo su
+   67  id
+   68  sudo service docker-compose@home-server start
+   69  sudo service docker-compose@home-server status
+   70  cd /var/log/
+   71  sudo su
+   72  docker ps
+   73  sudo docker ps
+   74  eval "$(docker-machine env default)"
+   75  docker-machine ls
+   76  docker run hello-world
+   77  sudo systemctl enable docker
+   78  sudo systemctl status docker-compose@home-server
+   79  sudo systemctl enable docker-compose@home-server
+   80  sudo systemctl start docker-compose@home-server
+   81  sudo systemctl status docker-compose@home-server
+   82  history > setup_commands
+    1  mkdir /opt/docker-compose/home-server
+    2  mkdir /opt/docker-compose/home-server -p
+    3  cp docker-compose.yml /opt/docker-compose/home-server/
+    4  cp docker-compose\@.service /etc/systemd/system/
+    5  vi docker-compose.yml 
+    6  fdisk -l
+    7  lsblk
+    8  sudo apt-get install mergerfs
+    9  mount
+   10  mount | grep sd
+   11  lsblk
+   12  vi /etc/fstab
+   13  blkid
+   14  lsblk
+   15  fdisk /dev/sdb
+   16  lsblk
+   17  mkfs.ext4 /dev/sdb1
+   18  lsblk
+   19  blkid
+   20  blkid | grep sd
+   21  blkid | grep sd | grep -v sde
+   22  vi /etc/fstab 
+   23  mkdir /mnt/d{1,2,3,4,5}
+   24  ls -ls /mnt
+   25  chmod 777 /mnt/*
+   26  ls -ls
+   27  ls -ls /mnt
+   28  mount --help
+   29  mount -a
+   30  cd /mnt
+   31  ls -ls
+   32  cd d1
+   33  ls -ls
+   34  mount -a
+   35  cd ..
+   36  ls -ls
+   37  cd d5
+   38  ls -ls
+   39  cd ..
+   40  ls -ls
+   41  cd d4
+   42  ls -ls
+   43  cd ..
+   44  mount /mnt/d5
+   45  cd d5
+   46  find . -type d > dirs.txt
+   47  ls
+   48  rm dirs.txt 
+   49  cd ../d1
+   50  find . -type d > ../dirs.txt
+   51  cd ..
+   52  cd d5
+   53  vi ../dirs.txt 
+   54  xargs mkdir -p < ../dirs.txt 
+   55  ls -ls
+   56  cd ..
+   57  ls -ls
+   58  rm dirs.txt 
+   59  chown ssakhamuri:ssakhamuri d5
+   60  ls -ls
+   61  chmod 777 *
+   62  ls -ls
+   63  cd d5
+   64  ls -ls
+   65  cd ..
+   66  cd d4
+   67  ls -ls
+   68  cd ..
+   69  cd d5
+   70  ls -ls
+   71  find . | xargs chown ssakhamuri:ssakhamuri 
+   72  ls -ls
+   73  find . | xargs chmod 777
+   74  ls -ls
+   75  cd ..
+   76  cd
+   77  exit
+   78  cd
+   79  sudo apt-get remove docker docker-engine docker.io containerd runc
+   80  sudo apt-get update
+   81  sudo apt-get install     apt-transport-https     ca-certificates     curl     gnupg-agent     software-properties-common
+   82  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   83  sudo apt-key fingerprint 0EBFCD88
+   84  sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   85     $(lsb_release -cs) \
+   86     stable"
+   87  sudo apt-get update
+   88  sudo apt-get install docker-ce docker-ce-cli containerd.io
+   89  systemctl docker-compose@home-server start
+   90  systemctl start docker-compose@home-server 
+   91  systemctl status docker-compose@home-server 
+   92  cd /opt/docker-compose/
+   93  ls
+   94  cd home-server/
+   95  ls
+   96  docker-compose
+   97  which docker-compose
+   98  sudo apt-get install docker-compose
+   99  which docker-compose
+  100  docker-compose
+  101  docker-compose up
+  102  systemctl start docker-compose@home-server 
+  103  docker ps
+  104  systemctl status docker-compose@home-server 
+  105  docker-compose up
+  106  vi docker-compose.yml 
+  107  exit
+  108  ls -ls
+  109  systemctl enable docker-compose@home-server 
+  110  systemctl status docker-compose@home-server 
+  111  systemctl start docker-compose@home-server 
+  112  systemctl status docker-compose@home-server 
+  113  cd /opt/docker-compose/
+  114  ls
+  115  journalctl -xe
+  116  docker-machine start default
+  117  sudo apt-get install docker-machine
+  118  /sbin/docker-machine start default
+  119  sudo systemctl start docker  
+  120  sudo systemctl status docker  
+  121  ps -ef | grep docker
+  122  date
+  123  systemctl status docker-compose@home-server 
+  124  systemctl start docker-compose@home-server 
+  125  systemctl status docker-compose@home-server 
+  126  docker-compose --verbose up -d
+  127  cd home-server/
+  128  docker-compose --verbose up -d
+  129  docker ps
+  130  docker-compose --verbose down -d
+  131  docker-compose down
+  132  vi docker-compose.yml 
+  133  exit
+  134  cd
+  135  docker-mahine ls
+  136  docker-machine ls
+  137  sudo docker run hello-world
+  138  sudo systemctl enable --now docker
+  139  exit
+  140  history >> setup_commands 
