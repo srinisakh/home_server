@@ -17,6 +17,7 @@ services:
       - /mnt/data/movies:/movies
       - /mnt/data/photos:/photos
       - /mnt/data/music:/music
+      - /dev/shm:/transcode
     restart: unless-stopped
 
   nzbget:
